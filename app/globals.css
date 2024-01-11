@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .Backimg {
+    @apply bg-[url("/Rain.jpg")] lg:bg-[center_right_1.5rem]  lg:bg-[length:100vw_120vh]  bg-cover  bg-fixed h-screen w-full flex  justify-center items-center;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .box {
+    @apply backdrop-blur-[10px] overflow-hidden  w-[350px] h-[650px] bg-gradient-to-tl from-[rgba(93,107,104,0.5)] via-[rgba(255,112,0,0.2)] to-[rgba(93,107,104,0.5)] rounded-[25px] px-[20px] pt-10;
+  }
+  .input-area {
+    @apply relative flex flex-col gap-[20px] pt-[50px] mb-[30px];
+  }
+  .input-area input {
+    @apply bg-[rgba(0,0,0,0.7)] backdrop-blur-[10px] w-full h-[50px] rounded-[10px] outline-none pl-[10px] pr-[35px] text-[rgba(255,255,255,0.6)];
+  }
+  .btn {
+    @apply w-full  p-[5px] bg-[rgba(0,0,0,0.7)] my-[40px] rounded-lg h-[50px] text-[18px] text-[rgba(255,255,255,0.6)];
+  }
+  .select {
+    @apply px-[10px] translate-y-[-500px] cursor-pointer transition delay-500 ease-in-out flex gap-2 h-[60px] justify-between items-center  mt-[40px] bg-[rgba(0,0,0,0.7)]  rounded-lg;
+  }
+  .act {
+    @apply transition duration-300 delay-150 font-bold bg-[rgba(255,255,255,0.6)] pt-[10px]  w-[50%] h-[45px] rounded-lg text-center !important;
+  }
+  .pasv {
+    @apply text-[rgba(255,255,255,0.6)] bg-transparent pt-[10px]  w-[50%] h-[45px] rounded-lg text-center !important;
+  }
 }
